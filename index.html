@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Game Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- 基本設定 --- */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        h1 { margin: 0; font-size: 2.5rem; }
+        p.subtitle { color: #bdc3c7; margin-top: 10px; }
+
+        /* --- グリッドレイアウト --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* --- ゲームカードのデザイン --- */
+        .game-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* ゲームのスクショ画像エリア（画像がない場合はグレーになります） */
+        .game-image {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .game-info {
+            padding: 20px;
+            flex-grow: 1; /* 下部のボタンを揃えるために必要 */
+        }
+        .game-title {
+            font-size: 1.5rem;
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+        }
+        .game-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* --- ダウンロードボタンエリア --- */
+        .download-buttons {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.8; }
+
+        /* Windowsボタンの色 */
+        .btn-win {
+            background-color: #0078D7;
+            color: white;
+        }
+        /* Macボタンの色 */
+        .btn-mac {
+            background-color: #999999;
+            color: white;
+        }
+
+        /* --- フッター --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Game Gallery</h1>
+        <p class="subtitle">Unityで作った自作ゲームの配布場所</p>
+    </header>
+
+    <div class="container">
+
+        <article class="game-card">
+            <img src="https://placehold.co/600x400?text=Game+Image" alt="Game 1 Screenshot" class="game-image">
+            
+            <div class="game-info">
+                <h2 class="game-title">スーパーアクションゲーム</h2>
+                <p class="game-desc">
+                    Unityで制作した2Dアクションゲームです。全5ステージ。
+                    敵を倒しながらゴールを目指してください。<br>
+                    操作方法：矢印キーで移動、スペースでジャンプ。
+                </p>
+            </div>
+            
+            <div class="download-buttons">
+                <a href="【ここにWindows版zipのURL】" class="btn btn-win">
+                    <i class="fab fa-windows"></i> Windows
+                </a>
+                <a href="【ここにMac版zipのURL】" class="btn btn-mac">
+                    <i class="fab fa-apple"></i> Mac
+                </a>
+            </div>
+        </article>
+
+        </div>
+
+    <footer>
+        &copy; 2024 My Name. All rights reserved.
+    </footer>
+
+</body>
+</html>
